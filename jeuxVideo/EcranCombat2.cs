@@ -271,7 +271,7 @@ namespace jeuxVideo
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
            
-
+           
 
           
             //VARIABLE GLOBALE
@@ -295,33 +295,33 @@ namespace jeuxVideo
 
                 //GESTION DEPLACEMENT 
 
-                _persoJoueur.Perso.DirectionPerso = new Vector2(0, 0);
+                _perso.DirectionPerso = new Vector2(0, 0);
 
-                if (_persoJoueur.SensPerso == false)
+                if (_sensPerso == false)
                 {
 
-                    _persoJoueur.Perso.Animation = "immobileDroite";
+                    _perso.Animation = "immobileDroite";
         
                 }
                 else
                 {
-                    _persoJoueur.Perso.Animation = "immobileGauche";
+                    _perso.Animation = "immobileGauche";
                 }
 
 
                 if (keyboardState.IsKeyDown(Keys.Q))
                 {
-                    _persoJoueur.Perso.DirectionPerso = new Vector2(-1, 0);
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
-                    _persoJoueur.SensPerso = true;
-                    _persoJoueur.Perso.Animation = "allerAGauche";
+                    _perso.DirectionPerso = new Vector2(-1, 0);
+                    _perso.ActualiseDeplacement(gameTime);
+                    _sensPerso = true;
+                    _perso.Animation = "allerAGauche";
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    _persoJoueur.Perso.DirectionPerso = new Vector2(1, 0);
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
-                    _persoJoueur.SensPerso = false;
-                    _persoJoueur.Perso.Animation = "allerADroite";
+                    _perso.DirectionPerso = new Vector2(1, 0);
+                    _perso.ActualiseDeplacement(gameTime);
+                    _sensPerso = false;
+                    _perso.Animation = "allerADroite";
                     
                 }
                
@@ -329,24 +329,24 @@ namespace jeuxVideo
                 if (keyboardState.IsKeyDown(Keys.Space) && IsCollision(txPerso, tyDessousPerso))
                 {
                     
-                    _persoJoueur.PositionYDebutSaut = _persoJoueur.Perso.PositionPerso.Y;
-                    _persoJoueur.SonSaut.Play();
-                    _persoJoueur.EtatSaut = (int)SAUT.SAUTE;
+                    _positionYDebutSaut = _perso.PositionPerso.Y;
+                    _sonSaut.Play();
+                    _etatSaut = (int)SAUT.SAUTE;
 
                 }
 
 
 
-                if (_persoJoueur.EtatSaut == (int)SAUT.SAUTE)
+                if (_etatSaut == (int)SAUT.SAUTE)
                 {
-                  _persoJoueur.Perso.DirectionPerso = new Vector2(0, -1) ;
+                  _perso.DirectionPerso = new Vector2(0, -1) ;
                  
 
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.ActualiseDeplacement(gameTime);
                 }
-                if (_persoJoueur.EtatSaut == (int)SAUT.SAUTE && _persoJoueur.Perso.PositionPerso.Y < _persoJoueur.PositionYDebutSaut - 120)
+                if (_etatSaut == (int)SAUT.SAUTE && _perso.PositionPerso.Y < _positionYDebutSaut - 120)
                 {
-                    _persoJoueur.EtatSaut = (int)SAUT.PEUT_SAUTER;
+                    _etatSaut = (int)SAUT.PEUT_SAUTER;
                 }
 
 
@@ -357,8 +357,8 @@ namespace jeuxVideo
 
                 if (!IsCollision(txPerso, tyDessousPerso))
                 {
-                    _persoJoueur.Perso.PositionPerso += _physique * _vitessePhysique;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.PositionPerso += _physique * _vitessePhysique;
+                    _perso.ActualiseDeplacement(gameTime);
 
 
                 }
@@ -367,14 +367,14 @@ namespace jeuxVideo
                 
                 if (IsCollision(txGauchePerso, tyPerso))
                 {
-                    _persoJoueur.Perso.VitessePerso = -_persoJoueur.Perso.VitessePerso;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.VitessePerso = -_perso.VitessePerso;
+                    _perso.ActualiseDeplacement(gameTime);
 
                 }
                 if (IsCollision(txDroitPerso, tyPerso))
                 {
-                    _persoJoueur.Perso.VitessePerso = -_persoJoueur.Perso.VitessePerso;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.VitessePerso = -_perso.VitessePerso;
+                    _perso.ActualiseDeplacement(gameTime);
 
 
                 }
@@ -383,22 +383,22 @@ namespace jeuxVideo
 
 
 
-                if (_persoJoueur.Perso.PositionPerso.X > GraphicsDevice.Viewport.Width - _persoJoueur.Perso.Perso.TextureRegion.Width / 2)
+                if (_perso.PositionPerso.X > GraphicsDevice.Viewport.Width - _perso.Perso.TextureRegion.Width / 2)
                 {
-                    _persoJoueur.Perso.DirectionPerso = new Vector2(-1, 0) * _vitessePhysique;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.DirectionPerso = new Vector2(-1, 0) * _vitessePhysique;
+                    _perso.ActualiseDeplacement(gameTime);
                 }
-                if (_persoJoueur.Perso.PositionPerso.X < 0)
+                if (_perso.PositionPerso.X < 0)
                 {
-                    _persoJoueur.Perso.DirectionPerso = new Vector2(1, 0) * _vitessePhysique;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.DirectionPerso = new Vector2(1, 0) * _vitessePhysique;
+                    _perso.ActualiseDeplacement(gameTime);
                 }
-                if (_persoJoueur.Perso.PositionPerso.Y < 0)
+                if (_perso.PositionPerso.Y < 0)
                 {
-                    _persoJoueur.Perso.DirectionPerso = new Vector2(0, 1) * _vitessePhysique;
-                    _persoJoueur.Perso.ActualiseDeplacement(gameTime);
+                    _perso.DirectionPerso = new Vector2(0, 1) * _vitessePhysique;
+                    _perso.ActualiseDeplacement(gameTime);
                 }
-                if (_persoJoueur.Perso.PositionPerso.Y > GraphicsDevice.Viewport.Height)
+                if (_perso.PositionPerso.Y > GraphicsDevice.Viewport.Height)
                 {
                     _myGame.EcranAfficher = (int)EnumEcranAfficher.MORT;
                 }
@@ -432,15 +432,15 @@ namespace jeuxVideo
                 if (_fleche.EtatSouris == true) //QUAND LE BOUTON EST CLIQUER ET QUE L'ANMATION ET PAS FINI
                 {
                     _fleche.EtatIntermediaire = true;
-                    if (_persoJoueur.SensPerso == false)
+                    if (_sensPerso == false)
                     {
-                        _persoJoueur.Perso.Animation = "tireADroite";
-                        _fleche.Fleches[_fleche.FlecheATirer].Position = _persoJoueur.Perso.PositionPerso;
+                        _perso.Animation = "tireADroite";
+                        _fleche.Fleches[_fleche.FlecheATirer].Position = _perso.PositionPerso;
                     }
                     else
                     {
-                        _persoJoueur.Perso.Animation = "tireAGauche";
-                        _fleche.Fleches[_fleche.FlecheATirer].Position =new Vector2(_persoJoueur.Perso.PositionPerso.X-40,_persoJoueur.Perso.PositionPerso.Y);
+                        _perso.Animation = "tireAGauche";
+                        _fleche.Fleches[_fleche.FlecheATirer].Position =new Vector2(_perso.PositionPerso.X-40,_perso.PositionPerso.Y);
                     }
 
                    
@@ -451,7 +451,7 @@ namespace jeuxVideo
                     {
                         _fleche.EtatTirs[_fleche.FlecheATirer] = true;
                         _fleche.EtatSouris = false;
-                        _persoJoueur.SonTirFleche.Play();
+                        _sonTirFleche.Play();
 
 
                     }
@@ -470,7 +470,7 @@ namespace jeuxVideo
                         _fleche.Fleches[i].Temp = 0;
 
 
-                        if (_persoJoueur.SensPerso == false && _fleche.SensDefinits[i] == false)
+                        if (_sensPerso == false && _fleche.SensDefinits[i] == false)
                         {
                             _fleche.Fleches[i].Direction = new Vector2(1, 0);
                             _fleche.SensDefinits[i] = true;
@@ -730,27 +730,27 @@ namespace jeuxVideo
                 }
                 if (_etatBossAttaque2 == (int)ATTAQUE2.ATTAQUE)
                 {
-                    if (_persoJoueur.Perso.PositionPerso.X > _oiseauBoss.PositionPerso.X)
+                    if (_perso.PositionPerso.X > _oiseauBoss.PositionPerso.X)
                     {
 
 
                         _oiseauBoss.DirectionPerso = new Vector2(1, 0);
                         _oiseauBoss.ActualiseDeplacement(gameTime);
                     }
-                    if (_persoJoueur.Perso.PositionPerso.X < _oiseauBoss.PositionPerso.X)
+                    if (_perso.PositionPerso.X < _oiseauBoss.PositionPerso.X)
                     {
 
                         _oiseauBoss.DirectionPerso = new Vector2(-1, 0);
                         _oiseauBoss.ActualiseDeplacement(gameTime);
                     }
-                    if (_persoJoueur.Perso.PositionPerso.Y > _oiseauBoss.PositionPerso.Y)
+                    if (_perso.PositionPerso.Y > _oiseauBoss.PositionPerso.Y)
                     {
 
 
                         _oiseauBoss.DirectionPerso = new Vector2(0, 1);
                         _oiseauBoss.ActualiseDeplacement(gameTime);
                     }
-                    if (_persoJoueur.Perso.PositionPerso.Y < _oiseauBoss.PositionPerso.Y)
+                    if (_perso.PositionPerso.Y < _oiseauBoss.PositionPerso.Y)
                     {
                         _oiseauBoss.DirectionPerso = new Vector2(0, -1);
                         _oiseauBoss.ActualiseDeplacement(gameTime);
@@ -784,7 +784,7 @@ namespace jeuxVideo
 
                 if (_etatBossAttaque3 == (int)ATTAQUE3.REJOINS_POSITION)
                 {
-                    _boss.PositionPerso = new Vector2(_persoJoueur.Perso.PositionPerso.X, -300);
+                    _boss.PositionPerso = new Vector2(_perso.PositionPerso.X, -300);
                     _etatBossAttaque3 = (int)ATTAQUE3.ATTAQUE;
                 }
                 if (_etatBossAttaque3 == (int)ATTAQUE3.ATTAQUE)
@@ -832,11 +832,11 @@ namespace jeuxVideo
                 //PROJECTILE BOSS
                 foreach (Sprite projectil in _projectileBoss)
                 {
-                    if (_persoJoueur.Perso.Intersects(projectil, 80, 0) && _persoJoueur.Perso.Touchable == true)
+                    if (_perso.Intersects(projectil, 80, 0) && _perso.Touchable == true)
                     {
-                        _persoJoueur.Perso.GetDamage(_persoJoueur.Vie, gameTime);
+                        _perso.GetDamage(_vie, gameTime);
                         projectil.Position = new Vector2(1000, 1000);
-                        _persoJoueur.Perso.Touchable = false;
+                        _perso.Touchable = false;
 
 
                     }
@@ -845,11 +845,11 @@ namespace jeuxVideo
 
 
                 //OISEAUBOSS
-                if (_oiseauBoss.Intersects(_persoJoueur.Perso, 29, 100) && _persoJoueur.Perso.Touchable == true)
+                if (_oiseauBoss.Intersects(_perso, 29, 100) && _perso.Touchable == true)
                 {
                     _oiseauBoss.PositionPerso = new Vector2(1000, 1000);
-                    _persoJoueur.Perso.GetDamage(_persoJoueur.Vie, gameTime);
-                    _persoJoueur.Perso.Touchable = false;
+                    _perso.GetDamage(_vie, gameTime);
+                    _perso.Touchable = false;
                     _etatBoss = (int)ETAT_BOOS.ATTENTE;
                     _etatBossAttaque2 = (int)ATTAQUE2.INACTIF;
                     _bossAction = false;
@@ -876,14 +876,14 @@ namespace jeuxVideo
 
 
                 //BOSS/PERSO
-                if (_persoJoueur.Perso.Intersects(_boss, 225, 200) && _persoJoueur.Perso.Touchable == true)
+                if (_perso.Intersects(_boss, 225, 200) && _perso.Touchable == true)
                 {
 
-                    _persoJoueur.Perso.GetDamage(_persoJoueur.Vie, gameTime);
+                    _perso.GetDamage(_vie, gameTime);
 
 
                     //
-                    _persoJoueur.Perso.Touchable = false;
+                    _perso.Touchable = false;
 
 
                 }
@@ -892,17 +892,17 @@ namespace jeuxVideo
 
 
                 //GESTION TOUCHABLE 
-                if (_persoJoueur.Perso.Touchable == false)
+                if (_perso.Touchable == false)
                 {
 
-                    _persoJoueur.Perso.Temp += deltaTime;
+                    _perso.Temp += deltaTime;
 
                 }
 
-                if (_persoJoueur.Perso.Temp > 3)
+                if (_perso.Temp > 3)
                 {
-                    _persoJoueur.Perso.Touchable = true;
-                    _persoJoueur.Perso.Temp = 0;
+                    _perso.Touchable = true;
+                    _perso.Temp = 0;
                 }
 
                 //GAGNER PERDU
@@ -911,7 +911,7 @@ namespace jeuxVideo
                 {
                     _myGame.EcranAfficher = (int)EnumEcranAfficher.GAGNER;
                 }
-                if (_persoJoueur.Perso.BarreDeVie <= 0)
+                if (_perso.BarreDeVie <= 0)
                 {
                     _myGame.EcranAfficher = (int)EnumEcranAfficher.MORT;
                 }
@@ -928,7 +928,7 @@ namespace jeuxVideo
 
 
                 _boss.Actualise(gameTime);
-                _persoJoueur.Perso.Actualise(gameTime);
+                _perso.Actualise(gameTime);
                 _oiseauBoss.Actualise(gameTime);
 
 
@@ -995,10 +995,10 @@ namespace jeuxVideo
                 projectil.Draw(_myGame.SpriteBatch);
             }
             _oiseauBoss.Draw(_myGame.SpriteBatch);
-            _persoJoueur.Perso.Draw(_myGame.SpriteBatch);
+            _perso.Draw(_myGame.SpriteBatch);
             _boss.Draw(_myGame.SpriteBatch);
             //VIE PERSONNAGE 
-            _persoJoueur.Vie.Draw(_myGame.SpriteBatch);
+            _vie.Draw(_myGame.SpriteBatch);
             _vieBoss.Draw(_myGame.SpriteBatch);
             _boutonQuitter.Draw(_myGame.SpriteBatch);
             _boutonContinuer.Draw(_myGame.SpriteBatch);
