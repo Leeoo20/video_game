@@ -1,0 +1,72 @@
+{
+  "textureAtlas": {
+    "texture": "TuileBarreVieBoss.png",
+    "regionWidth": 383,
+    "regionHeight": 34
+  },
+  "cycles": {
+    "vie20": {
+      "frames": [0]
+    },
+    "vie19": {
+      "frames": [1]
+    },
+    "vie18": {
+      "frames": [2]
+    },
+    "vie17": {
+      "frames": [3]
+    },
+    "vie16": {
+      "frames": [4]
+    },
+    "vie15": {
+      "frames": [5]
+    },
+    "vie14": {
+      "frames": [6]
+    },
+    "vie13": {
+      "frames": [7]
+    },
+    "vie12": {
+      "frames": [8]
+    },
+    "vie11": {
+      "frames": [9]
+    },
+    "vie10": {
+      "frames": [10]
+    },
+    "vie9": {
+      "frames": [11]
+    },
+    "vie8": {
+      "frames": [12]
+    },
+    "vie7": {
+      "frames": [13]
+    },
+    "vie6": {
+      "frames": [14]
+    },
+    "vie5": {
+      "frames": [15]
+    },
+    "vie4": {
+      "frames": [16]
+    },
+    "vie3": {
+      "frames": [17]
+    },
+    "vie2": {
+      "frames": [18]
+    },
+    "vie1": {
+      "frames": [19]
+    },
+    "vie0": {
+      "frames": [20]
+    }
+  }
+}

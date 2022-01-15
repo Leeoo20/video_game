@@ -1,0 +1,52 @@
+{
+  "textureAtlas": {
+    "texture": "tuileBossCyberRobot.png",
+    "regionWidth": 144,
+    "regionHeight": 144
+  },
+  "cycles": {
+    "immobileGauche": {
+      "frames": [0,1,2,3,4,5,6]
+    },
+    "allerAGauche": {
+      "frames": [7,8,9,10,11,12,13]
+    },
+    "tirAGauche": {
+      "frames": [14,15,16,17,18,19,20,21,22]
+    },
+    "toucherGauche": {
+      "frames": [23,24]
+    },
+    "protectionGauche": {
+      "frames": [25,26,27]
+    },
+    "mort": {
+      "frames": [29,30,31,32,33,34,35,36,37]
+    },
+    "attaqueCaCGauche": {
+      "frames": [ 38 ],
+      "frameDuration": 2
+    },
+    "attaqueCaCDroite": {
+      "frames": [39]
+    },
+    "immobileDroite": {
+      "frames": [40,41,42,43,44,45,46]
+    },
+    "allerADroite": {
+      "frames": [47,48,49,50,51,52,53]
+    },
+    "tirADroite": {
+      "frames": [54,55,56,57,58,59,60]
+    },
+    "toucherDroite": {
+      "frames": [62,63]
+    },
+    "protectionDroite": {
+      "frames": [64,65,66]
+    },
+    "mortDroite": {
+      "frames": [68,69,70,71,72,73,74,75,76]
+    }
+  }
+}

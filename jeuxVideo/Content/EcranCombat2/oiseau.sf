@@ -1,0 +1,12 @@
+{
+  "textureAtlas": {
+    "texture": "tuileOiseau.png",
+    "regionWidth": 60,
+    "regionHeight": 60
+  },
+  "cycles": {
+    "vole": {
+      "frames": [0,2,4,12,14,16,24]
+    }
+  }
+}

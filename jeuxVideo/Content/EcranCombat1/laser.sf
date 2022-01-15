@@ -1,0 +1,15 @@
+{
+  "textureAtlas": {
+    "texture": "tuileLaser.png",
+    "regionWidth": 900,
+    "regionHeight": 40
+  },
+  "cycles": {
+    "laserGauche": {
+      "frames": [0,1,2]
+    },
+    "laserDroite": {
+      "frames": [3,4,5]
+    }
+  }
+}

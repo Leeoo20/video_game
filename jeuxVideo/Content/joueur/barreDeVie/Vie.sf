@@ -1,0 +1,87 @@
+{
+  "textureAtlas": {
+    "texture": "TuileVie.png",
+    "regionWidth": 102,
+    "regionHeight": 34
+  },
+  "cycles": {
+    "vie12": {
+      "frames": [0]
+    },
+    "vie11": {
+      "frames": [1]
+    },
+    "vie10": {
+      "frames": [2]
+    },
+    "vie9": {
+      "frames": [3]
+    },
+    "vie8": {
+      "frames": [4]
+    },
+    "vie7": {
+      "frames": [5]
+    },
+    "vie6": {
+      "frames": [6]
+    },
+    "vie5": {
+      "frames": [7]
+    },
+    "vie4": {
+      "frames": [8]
+    },
+    "vie3": {
+      "frames": [9]
+    },
+    "vie2": {
+      "frames": [10]
+    },
+    "vie1": {
+      "frames": [11]
+    },
+    "vie0": {
+      "frames": [12]
+    },
+    "vieInvincible12": {
+      "frames": [13]
+    },
+    "vieInvincible11": {
+      "frames": [14]
+    },
+    "vieInvincible10": {
+      "frames": [15]
+    },
+    "vieInvincible9": {
+      "frames": [16]
+    },
+    "vieInvincible8": {
+      "frames": [17]
+    },
+    "vieInvincible7": {
+      "frames": [18]
+    },
+    "vieInvincible6": {
+      "frames": [19]
+    },
+    "vieInvincible5": {
+      "frames": [20]
+    },
+    "vieInvincible4": {
+      "frames": [21]
+    },
+    "vieInvincible3": {
+      "frames": [22]
+    },
+    "vieInvincible2": {
+      "frames": [23]
+    },
+    "vieInvincible1": {
+      "frames": [24]
+    },
+    "vieInvincible0": {
+      "frames": [25]
+    }
+  }
+}

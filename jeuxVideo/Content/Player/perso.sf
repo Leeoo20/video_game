@@ -1,0 +1,39 @@
+{
+  "textureAtlas": {
+    "texture": "tuilePerso.png",
+    "regionWidth": 100,
+    "regionHeight": 100
+  },
+  "cycles": {
+    "allerADroite": {
+      "frames": [1,2,3,4,5]
+    },
+    "mort": {
+      "frames": [8,9,10,11,12]
+    },
+    "tireADroite": {
+      "frames": [19,20,21,22,23,24,25]
+    },
+    "recupererVie": {
+      "frames": [31,32,33,34]
+    },
+    "rouladeDroite": {
+      "frames": [13,14,15,16,17,18,19]
+    },
+    "immobileDroite": {
+      "frames": [27]
+    },
+    "allerAGauche": {
+      "frames": [36,37,38,39]
+    },
+    "tireAGauche": {
+      "frames": [54,55,56,57,58,59,60]
+    },
+    "rouladeGauche": {
+      "frames": [47,48,49,50,51,52,53]
+    },
+    "immobileGauche": {
+      "frames": [54]
+    }
+  }
+}

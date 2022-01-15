@@ -1,0 +1,21 @@
+{
+  "textureAtlas": {
+    "texture": "bossTuile.png",
+    "regionWidth": 320,
+    "regionHeight": 295
+  },
+  "cycles": {
+    "allerAGauche": {
+      "frames": [8,11,12,13,14]
+    },
+    "allerADroite": {
+      "frames": [0,3,4,5,6]
+    },
+    "immobile": {
+      "frames": [8,11]
+    },
+    "tombe": {
+      "frames": [16,17,18,19,20]
+    }
+  }
+}
